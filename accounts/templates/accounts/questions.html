@@ -1,0 +1,61 @@
+<!--DO NOT USE THIS FILE ------ DO NOT USE THIS FILE-->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<br> <br> 
+<p class="big_text">
+Choose 5 interests...
+</p>
+<div class="results_and_search_text">
+<form action="." method="POST" id="userRequest_activity">
+{% csrf_token %}
+
+
+{# access in view as request.POST['interests'] #}
+
+<input type="checkbox" name="interest" value="v_sports"> Sports<br>
+<input type="checkbox" name="interest" value="v_coding"> Coding<br>
+<input type="checkbox" name="interest" value="v_music"> Music<br>
+<input type="checkbox" name="interest" value="v_film"> Film<br>
+<input type="checkbox" name="interest" value="v_celebrity_gossip"> Celeberity Gossip<br>
+<input type="checkbox" name="interest" value="v_art"> Art<br>
+<input type="checkbox" name="interest" value="v_philosophy"> Philosophy<br>
+<input type="checkbox" name="interest" value="v_beer"> Beer<br>
+<input type="checkbox" name="interest" value="v_wine"> Wine<br>
+<input type="checkbox" name="interest" value="v_gadgets"> Gadgets<br>
+<input type="checkbox" name="interest" value="v_gaming"> Gaming<br>
+<input type="checkbox" name="interest" value="v_politics"> Politics<br>
+<input type="checkbox" name="interest" value="v_activism"> Activism<br>
+<input type="checkbox" name="interest" value="v_environmentalism"> Environmentalism<br>
+<input type="checkbox" name="interest" value="v_cooking"> Cooking<br>
+<input type="checkbox" name="interest" value="v_coding"> Coding<br>
+<input type="checkbox" name="interest" value="v_crafts"> Crafts<br>
+
+<br>
+
+  <input type="submit" value="Submit" class="questions_button" />
+</form>
+
+</div>
+   
+{% endblock content %}    
+
+{% block extra_js %}
+
+    <script type="text/javascript">
+
+$("input[name=interest]").change(function(){
+    var max= 5;
+    if( $("input[name=interest]:checked").length == max ){
+        $("input[name=interest]").attr('disabled', 'disabled');
+        $("input[name=interest]:checked").removeAttr('disabled');
+    }else{
+         $("input[name=interest]").removeAttr('disabled');
+    }
+})
+        </script>
+
+
+{% endblock %}

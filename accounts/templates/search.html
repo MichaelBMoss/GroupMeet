@@ -1,0 +1,90 @@
+{% extends 'layouts/default/page.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col">
+        <br>
+        <p class="big_text"> Hi {{user.username}}!<br>Your Interests Are... </p>
+        <br>
+        <div class="results_and_search_text">
+            {% for interest in interests %} 
+                {% if interest.user == user.username %}
+                    {{interest.interest1}}<br>
+                    {{interest.interest2}}<br>
+                    {{interest.interest3}}<br>
+                    {{interest.interest4}}<br>
+                    {{interest.interest5}}<br>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col">
+        <br>
+        <p class="big_text">Search For People According To Their Interest...
+        </p>
+        <br>
+        <br>
+        <div class="results_and_search_text">
+            <form action="/search" method="POST">
+                {% csrf_token %}
+                <select name="search">
+                    <option value="sports">Sports</option>
+                    <option value="coding">Coding</option>
+                    <option value="music">Music</option>
+                    <option value="film">Film</option>
+                    <option value="celebrity gossip">Celeberity Gossip</option>
+                    <option value="art">Art</option>
+                    <option value="philosophy">Philosophy</option>
+                    <option value="beer">Beer</option>
+                    <option value="wine">Wine</option>
+                    <option value="gadgets">Gadgets</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="politics">Politics</option>
+                    <option value="activism">Activism</option>
+                    <option value="environmentalism">Environmentalism</option>
+                    <option value="cooking">Cooking</option>
+                    <option value="crafts">Crafts</option>
+                </select>
+                <input type="submit" value="Select">
+            </form>
+            <br>
+
+            {% if choice %}
+                {% for interest in interests %}
+                    {% if choice == interest.interest1 %}
+                        {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
+                        <br>
+                        <br>
+                    {% endif %}    
+                    {% if choice == interest.interest2 %}
+                        {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
+                        <br>
+                        <br>
+                    {% endif %}    
+                    {% if choice == interest.interest3 %}
+                        {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
+                        <br>
+                        <br>
+                    {% endif %}    
+                    {% if choice == interest.interest4 %}
+                        {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
+                        <br>
+                        <br>
+                    {% endif %}    
+                    {% if choice == interest.interest5 %}
+                        {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
+                        <br>
+                        <br>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-1">
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+/* Hi there */
+        .navbar-brand {
+            font-family: 'Lilita One', cursive;
+            font-weight: 800;
+            letter-spacing: 1px;
+            font-size: 24pt;
+            margin-right: 50px;
+        }
+
+        body {
+    background:linear-gradient(0deg,#FCD470 0,#FBB658 100%);
+        }
+
+        .nav-link {
+            font-size: 16pt;
+        }
+        .navbar {
+            background: #ff6a00 !important;
+            border-color: #ff6a00;
+        }
+
+        .results_and_search_text {
+            font-family: 'Lilita One', cursive;
+            font-weight: 300;
+            letter-spacing: 1px;
+            font-size: 24pt;
+        }
+        
+        .big_text {
+            font-family: 'Lilita One', cursive;
+            font-weight: 300;
+            letter-spacing: 1px;
+            font-size: 35pt;
+        }  
+
+        .questions_button {
+            margin-left: 200px;
+        }
+
+        form textarea,
+        form input {
+            font-size: 16pt;
+            max-height: 50px;
+            width: 300px;
+        }
+
+        form label {
+            font-size: 16pt;
+            font-weight: 200;
+            min-width: 100px;
+            vertical-align: top;
+        }
+        button.btn-lg {
+            font-size: 16pt;
+            background: #ff6a00 !important;
+            border-color: #ff6a00;
+        }

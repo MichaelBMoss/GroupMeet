@@ -1,0 +1,93 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+
+    {% if request.user.is_authenticated %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 style="margin-left: 240px;">Hi {{ request.user.username }}, Welcome To GroupMeet</h1>
+            <br><br>
+        </div>
+    </div>
+</div>
+<div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <br><br>
+                <h2>Choose Your Interests!</h2>
+                <p>Pick your passions, so that new friends can find you and send you an email!</p>
+
+            </div>  <!-- left column end -->
+            <div class="col-sm-6">
+                <br><br>
+                <h2>Find New Friends!</h2>
+                <p>Choose an interest and see all the cool people that share it with you!</p>
+
+            </div> <!-- right column end -->
+        </div> <!-- top row end -->
+
+        <div class="row"> <!-- 2nd row start -->
+            <div class="col-sm-6 text-center"> 
+                <br><br>
+                <a href="questions">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Choose Interests</button>
+                </a>
+            </div>
+            <div class="col-sm-6 text-center"> 
+                <br><br>
+                <a href="search">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Find Friends</button> 
+                </a>
+            </div>
+        </div> <!-- 2nd row end --> 
+    </div>  <!-- container end -->
+
+    {% else %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 style="margin-left: 240px;">Welcome to Group Meet!</h1>
+            <br><br>
+        </div>
+    </div>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <br><br>
+                <h2>Register</h2>
+                <p>First-time Group Meeter? Find people like you by signing up here.</p>
+
+            </div>  <!-- left column end -->
+            <div class="col-sm-6">
+                <br><br>
+                <h2>Login</h2>
+                <p>Already have a Group Meet acount? Get back to meeting people like you by logging in here.</p>
+
+            </div> <!-- right column end -->
+        </div> <!-- top row end -->
+
+        <div class="row"> <!-- 2nd row start -->
+            <div class="col-sm-6 text-center"> 
+                <br><br>
+                <a href="{% url 'accounts:sign_up' %}">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Register</button>
+                </a>
+            </div>
+            <div class="col-sm-6 text-center"> 
+                <br><br>
+                <a href="{% url 'accounts:log_in' %}">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Log In</button> 
+                </a>
+            </div>
+        </div> <!-- 2nd row end --> 
+    </div>  <!-- container end -->
+    {% endif %}
+<br><br><br><br><br><br><br><br>
+
+{% endblock %}

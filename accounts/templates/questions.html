@@ -1,0 +1,62 @@
+{% extends 'layouts/default/page.html' %}
+
+{% block content %}
+
+
+<div class="container">
+<br> <br> 
+<p class="big_text">
+Choose 5 interests...
+</p>
+<div class="results_and_search_text">
+<form action="/questions" method="POST" id="userRequest_activity">
+{% csrf_token %}
+
+
+{# access in view as request.POST['interests'] #}
+
+<input type="checkbox" name="interest" value="sports"> Sports<br>
+<input type="checkbox" name="interest" value="coding"> Coding<br>
+<input type="checkbox" name="interest" value="music"> Music<br>
+<input type="checkbox" name="interest" value="film"> Film<br>
+<input type="checkbox" name="interest" value="celebrity gossip"> Celeberity Gossip<br>
+<input type="checkbox" name="interest" value="art"> Art<br>
+<input type="checkbox" name="interest" value="philosophy"> Philosophy<br>
+<input type="checkbox" name="interest" value="beer"> Beer<br>
+<input type="checkbox" name="interest" value="wine"> Wine<br>
+<input type="checkbox" name="interest" value="gadgets"> Gadgets<br>
+<input type="checkbox" name="interest" value="gaming"> Gaming<br>
+<input type="checkbox" name="interest" value="politics"> Politics<br>
+<input type="checkbox" name="interest" value="activism"> Activism<br>
+<input type="checkbox" name="interest" value="environmentalism"> Environmentalism<br>
+<input type="checkbox" name="interest" value="cooking"> Cooking<br>
+<input type="checkbox" name="interest" value="crafts"> Crafts<br>
+
+<br>
+
+  <input type="submit" value="Select">
+</form>
+
+</div>
+</div>
+   
+{% endblock content %}    
+
+{% block extra_js %}
+
+    <script type="text/javascript">
+
+$("input[name=interest]").change(function(){
+    var max= 5;
+    if( $("input[name=interest]:checked").length == max ){
+        $("input[name=interest]").attr('disabled', 'disabled');
+        $("input[name=interest]:checked").removeAttr('disabled');
+    }else{
+         $("input[name=interest]").removeAttr('disabled');
+    }
+})
+
+        </script>
+
+
+{% endblock %}
