@@ -1,6 +1,6 @@
 /* Hi there */
         .navbar-brand {
-            font-family: 'Lilita One', cursive;
+/*            font-family: 'Lilita One', cursive;*/
             font-weight: 800;
             letter-spacing: 1px;
             font-size: 24pt;
@@ -20,14 +20,14 @@
         }
 
         .results_and_search_text {
-            font-family: 'Lilita One', cursive;
+/*            font-family: 'Lilita One', cursive;*/
             font-weight: 300;
             letter-spacing: 1px;
             font-size: 24pt;
         }
         
         .big_text {
-            font-family: 'Lilita One', cursive;
+/*            font-family: 'Lilita One', cursive;*/
             font-weight: 300;
             letter-spacing: 1px;
             font-size: 35pt;
