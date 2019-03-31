@@ -54,31 +54,41 @@
 
             {% if choice %}
                 {% for interest in interests %}
-                    {% if choice == interest.interest1 %}
-                        {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
-                        <br>
-                        <br>
+                    {% if interest.user != user.username %}
+                        {% if choice == interest.interest1 %}
+                            {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
+                            <br>
+                            <br>
+                        {% endif %}    
                     {% endif %}    
-                    {% if choice == interest.interest2 %}
-                        {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
-                        <br>
-                        <br>
-                    {% endif %}    
-                    {% if choice == interest.interest3 %}
-                        {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
-                        <br>
-                        <br>
-                    {% endif %}    
-                    {% if choice == interest.interest4 %}
-                        {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
-                        <br>
-                        <br>
-                    {% endif %}    
-                    {% if choice == interest.interest5 %}
-                        {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
-                        <br>
-                        <br>
+                    {% if interest.user != user.username %}
+                        {% if choice == interest.interest2 %}
+                            {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
+                            <br>
+                            <br>
+                        {% endif %}
                     {% endif %}
+                    {% if interest.user != user.username %}        
+                        {% if choice == interest.interest3 %}
+                            {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
+                            <br>
+                            <br>
+                        {% endif %}
+                    {% endif %}
+                    {% if interest.user != user.username %}        
+                        {% if choice == interest.interest4 %}
+                            {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
+                            <br>
+                            <br>
+                        {% endif %}
+                    {% endif %}
+                    {% if interest.user != user.username %}        
+                        {% if choice == interest.interest5 %}
+                            {{interest.user}} is interested in {{interest.interest1}}, {{interest.interest2}}, {{interest.interest3}}, {{interest.interest4}} and {{interest.interest5}}.  Email them at {{interest.email}} to say hey!
+                            <br>
+                            <br>
+                        {% endif %}
+                    {% endif %}    
                 {% endfor %}
             {% endif %}
         </div>
